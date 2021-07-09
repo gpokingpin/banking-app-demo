@@ -1,28 +1,28 @@
 let users = [
   {
     id: 1,
-    fullName: 'Roger Buck',
+    fullName: "Roger Buck",
     username: "1111",
     password: "1111",
     transactions: [100, 200, -300, 200],
   },
   {
     id: 2,
-    fullName: 'Tom Jones',
+    fullName: "Tom Jones",
     username: "2222",
     password: "2222",
     transactions: [200, -200, -300, 200],
   },
   {
     id: 3,
-    fullName: 'John Travolta',
+    fullName: "John Travolta",
     username: "3333",
     password: "3333",
     transactions: [1000, -300, -300, 100],
   },
   {
     id: 4,
-    fullName: 'Sally Fields',
+    fullName: "Sally Fields",
     username: "4444",
     password: "4444",
     transactions: [1000, -300, -300, 100],
@@ -48,12 +48,13 @@ loginButton.addEventListener("click", function (event) {
   //   }
   // }
   // document.write(JSON.stringify(currentUser))
-  
 
   // let currentUser = users.find(function (user) {
   //   return username === user.username && password === user.password;
   // });
-  let currentUser = users.find(user => username === user.username && password === user.password)
+  let currentUser = users.find(
+    (user) => username === user.username && password === user.password
+  );
 
   // if the password matches, render their data
   renderUser(currentUser);
@@ -63,12 +64,33 @@ loginButton.addEventListener("click", function (event) {
 
 function renderUser(user) {
   let form = document.querySelector(".login-form");
-  form.classList.toggle('hidden');
-  let userInfoDiv = document.querySelector('.user-info-div');
-  userInfoDiv.classList.toggle('hidden');
+  form.classList.toggle("hidden");
+  let userInfoDiv = document.querySelector(".user-info-div");
+  userInfoDiv.classList.toggle("hidden");
 
   // populate each field in the user info div
-  let userSpan = document.querySelector('.user-name');
+  let userSpan = document.querySelector(".user-name");
   userSpan.innerText = user.fullName;
 
+  let userBalanceSpan = document.querySelector(".user-balance");
+  let userBalance = user.transactions.reduce((acc, cur) => acc + cur, 0);
+  userBalanceSpan.innerText = userBalance;
+  console.log("userBalance: " + userBalance);
+
+  let userTransactionsList = document.querySelector(".user-transactions");
+
+  user.transactions.forEach((transaction) => {
+    const transactionListItem = document.createElement("li");
+    transactionListItem.innerText = `$${Math.abs(transaction)}`;
+    // if (transaction > 0) {
+    //   transactionListItem.classList.add("green");
+    // } else {
+    //   transactionListItem.classList.add("red");
+    // }
+
+    transactionListItem.classList.add(`${transaction > 0 ? 'green' : 'red'}`)
+
+
+    userTransactionsList.append(transactionListItem);
+  });
 }

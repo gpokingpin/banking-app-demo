@@ -1,27 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Banking App</title>
-    <link rel="stylesheet" href="./style.css">
-</head>
-<body>
-    <h1 class='page-heading'>Banking App</h1>
-    <form class='login-form'>
-        <label for='username'>Username: </label>
-        <input id='username' type='text' placeholder="Enter your username">
-        <label for='password'>Password: </label>
-        <input id='password' type='text' placeholder="Enter your password">
-        <button id='login-button' type='submit'>Log In</button>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <h1 class="page-heading">Banking App</h1>
+
+    <form class="login-form">
+      <div class="username-div">
+        <label for="username">Username: </label>
+        <input id="username" type="text" placeholder="Enter your username" />
+      </div>
+      <div class="password-div">
+        <label for="password">Password: </label>
+        <input id="password" type="text" placeholder="Enter your password" />
+      </div>
+      <div class="button-div">
+        <button id="login-button" type="submit">Log in</button>
+      </div>
     </form>
-    <div class='user-info-div hidden'>
-        <h1>Hello, <span class='user-name'>User</span>!</h1>
-        <h3>Current Balance: $<span class='user-balance'>10000</span></h3>
-        <h3>Recent Transactions:</h3>
-        <ul class='user-transactions'></ul>
+    <div class="user-info-div hidden">
+      <h1>Hello, <span class="user-name">User</span>!</h1>
+      <h3>Current Balance: $<span class="user-balance">10000</span></h3>
+      <h3>Recent Transactions:</h3>
+      <ul class="user-transactions"></ul>
     </div>
     <script src="./main.js"></script>
-</body>
+  </body>
 </html>

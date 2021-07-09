@@ -1,13 +1,67 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+
+.page-heading {
+  font-family: "Poppins", sans-serif;
+  flex-grow: 1;
+  text-align: center;
+  margin: 1rem 0;
+  color: #fff5cc;
+  background-color: #007ac0;
+  /* margin-top: 1rem;
+    margin-bottom: 1rem; */
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: aliceblue;
+}
+
+.login-form {
+  width: 250px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  height: 120px;
+  background-color: orange;
+  padding: 15px;
+}
+
+.username-div,
+.password-div {
+  display: flex;
+  flex-direction: column;
+}
+
+.button-div {
+    display: flex;
+    justify-content: center;
+}
+
+#login-button {
+    margin-top: .5rem;
+    width: 100px;
+}
+
+.user-transactions {
+    list-style-type: none;
+}
+
+.green {
+    color: green;
+}
+
+.red {
+    color: red;
 }
 
 .hidden {
     display: none;
-}
-
-.page-heading {
-    text-align: center;
 }
